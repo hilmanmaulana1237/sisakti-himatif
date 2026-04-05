@@ -9,7 +9,7 @@ import {
   IconFileReport, IconDownload
 } from "@tabler/icons-react";
 
-interface Aspirasi { id: string; name: string; category: string; message: string; status: string; tindakLanjut: string; createdAt: string; }
+interface Aspirasi { id: string; name: string; category: string; message: string; contact: string; status: string; tindakLanjut: string; createdAt: string; }
 interface Article { id: string; title: string; badge: string; description: string; link: string; maskotImage: string; createdAt: string; }
 interface ChatLog { id: string; messages: { role: string; content: string }[]; status: string; totalMessages: number; createdAt: string; resolvedAt: string | null; }
 interface Feedback { id: string; name: string; rating: number; message: string; createdAt: string; }
@@ -94,11 +94,11 @@ export default function AdminPage() {
 
   const exportAspirasiCSV = () => {
     const BOM = "\uFEFF";
-    const header = "Kode_Tiket,Tanggal,Nama/NIM,Kategori,Status,Pesan,Tindak_Lanjut\n";
+    const header = "Kode_Tiket,Tanggal,Nama/NIM,Kategori,Kontak,Status,Pesan,Tindak_Lanjut\n";
     const rows = aspirasi.map(a => {
       const cleanMessage = a.message.replace(/[\n\r]+/g, ' ').replace(/"/g, '""');
       const cleanTL = (a.tindakLanjut || '').replace(/[\n\r]+/g, ' ').replace(/"/g, '""');
-      return `"${a.id}","${new Date(a.createdAt).toLocaleString('id-ID')}","${a.name}","${a.category}","${a.status || 'Menunggu'}","${cleanMessage}","${cleanTL}"`;
+      return `"${a.id}","${new Date(a.createdAt).toLocaleString('id-ID')}","${a.name}","${a.category}","${a.contact || '-'}","${a.status || 'Menunggu'}","${cleanMessage}","${cleanTL}"`;
     }).join("\n");
     const blob = new Blob([BOM + header + rows], { type: 'text/csv;charset=utf-8;' });
     const link = document.createElement("a");
@@ -237,6 +237,11 @@ export default function AdminPage() {
                   <div className="bg-neutral-800/50 px-3 py-1.5 rounded-lg mb-2 inline-block">
                     <span className="text-[10px] text-neutral-400 flex items-center gap-1"><IconCategory className="w-3 h-3" /> {item.category}</span>
                   </div>
+                  {item.contact && (
+                    <div className="bg-neutral-800/50 px-3 py-1.5 rounded-lg mb-2 ml-2 inline-block">
+                      <span className="text-[10px] text-neutral-400 flex items-center gap-1"><IconMessageCircle className="w-3 h-3" /> {item.contact}</span>
+                    </div>
+                  )}
                   <div className="bg-neutral-950/50 border border-neutral-800 p-3.5 rounded-xl mb-3">
                     <p className="text-xs text-neutral-300 whitespace-pre-wrap leading-relaxed">{item.message}</p>
                   </div>

@@ -42,6 +42,7 @@ export async function POST(req: Request) {
       name: body.name || "Anonim",
       category: body.category || "Lainnya",
       message: body.message || "",
+      contact: body.contact || "",
       status: "Menunggu",
       tindak_lanjut: "",
       created_at: body.createdAt || new Date().toISOString()

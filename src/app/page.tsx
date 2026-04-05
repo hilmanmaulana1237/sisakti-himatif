@@ -74,7 +74,7 @@ function MaskotGallery() {
 export default function Home() {
   const [articles, setArticles] = useState<Article[]>([]);
   const [loadingArticles, setLoadingArticles] = useState(true);
-  const [formData, setFormData] = useState({ name: "", category: "Konsultasi Akademik", message: "" });
+  const [formData, setFormData] = useState({ name: "", category: "Konsultasi Akademik", message: "", contact: "" });
   const [stats, setStats] = useState({ aspirasiCount: 0, articlesCount: 0, resolvedCount: 0 });
 
   // History State
@@ -132,7 +132,7 @@ export default function Home() {
       setAspirasiHistory(newHistory);
       localStorage.setItem("sisakti_aspirasi_history", JSON.stringify(newHistory));
 
-      setFormData({ name: "", category: "Konsultasi Akademik", message: "" });
+      setFormData({ name: "", category: "Konsultasi Akademik", message: "", contact: "" });
       setCopied(false);
       setTicketModal({ open: true, ticketId });
     } catch {
@@ -423,6 +423,10 @@ export default function Home() {
                 <div>
                   <label className="text-sm font-medium text-neutral-600 dark:text-neutral-400 mb-1.5 block">Deskripsi Kendala</label>
                   <textarea rows={4} required value={formData.message} onChange={e => setFormData({ ...formData, message: e.target.value })} className="w-full bg-neutral-50 dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 rounded-xl px-4 py-3.5 text-neutral-900 dark:text-white focus:outline-none focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20 transition-all resize-none text-sm" placeholder="Ceritakan kendala yang sedang kamu alami..." />
+                </div>
+                <div>
+                  <label className="text-sm font-medium text-neutral-600 dark:text-neutral-400 mb-1.5 block">Kontak untuk Tindak Lanjut <span className="text-neutral-400 font-normal">(opsional)</span></label>
+                  <input type="text" value={formData.contact} onChange={e => setFormData({ ...formData, contact: e.target.value })} className="w-full bg-neutral-50 dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 rounded-xl px-4 py-3.5 text-neutral-900 dark:text-white focus:outline-none focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20 transition-all text-sm" placeholder="No. WA / Email / ID Line (agar KASTRAD bisa menghubungi)" />
                 </div>
                 <button type="submit" disabled={!formData.message} className="w-full py-4 rounded-xl bg-brand-blue hover:bg-brand-darkBlue text-white font-bold flex items-center justify-center gap-2 shadow-lg hover:shadow-brand-blue/25 transition-all text-sm mt-2 disabled:opacity-50 disabled:cursor-not-allowed">
                   Kirim ke SI SAKTI
