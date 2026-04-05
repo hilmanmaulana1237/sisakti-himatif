@@ -54,7 +54,7 @@ function MaskotGallery() {
   const scroll = (dir: number) => {
     scrollRef.current?.scrollBy({ left: dir * 320, behavior: "smooth" });
   };
-  const imgs = ["/maskot/1.png", "/maskot/2.png", "/maskot/3.png", "/maskot/4.png", "/maskot/5.png", "/maskot/6.png"];
+  const imgs = ["/maskot/1.png", "/maskot/2.png", "/maskot/3.png", "/maskot/4.png", "/maskot/5.png", "/maskot/6.webp"];
   return (
     <div className="relative">
       <button onClick={() => scroll(-1)} className="absolute left-0 top-1/2 -translate-y-1/2 z-20 w-10 h-10 bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 rounded-full flex items-center justify-center shadow-lg hover:bg-brand-blue hover:text-white hover:border-brand-blue transition-all"><IconChevronLeft className="w-5 h-5" /></button>
@@ -187,7 +187,7 @@ export default function Home() {
           {/* Right — Maskot */}
           <div className="flex justify-center order-1 md:order-2">
             <div className="relative w-[260px] h-[260px] sm:w-[360px] sm:h-[360px] md:w-[480px] md:h-[480px] animate-float">
-              <Image src="/maskot/utama landingpage.webp" fill alt="SI SAKTI" className="object-contain drop-shadow-[0_20px_60px_rgba(59,130,246,0.3)]" priority />
+              <Image src="/maskot/utama.webp" fill alt="SI SAKTI" className="object-contain drop-shadow-[0_20px_60px_rgba(59,130,246,0.3)]" priority />
             </div>
           </div>
         </div>
@@ -303,7 +303,7 @@ export default function Home() {
               muted
               loop
               playsInline
-              poster="/maskot/utama landingpage.webp"
+              poster="/maskot/utama.webp"
             >
               <source src="/maskot/Video_Siap_Dibuat.mp4" type="video/mp4" />
             </video>
@@ -441,10 +441,10 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center md:items-start gap-10 mb-12">
           <div className="flex flex-col items-center md:items-start max-w-sm">
             <div className="flex items-center gap-3 mb-6 bg-neutral-50 dark:bg-neutral-900 px-4 py-3 rounded-2xl border border-neutral-200 dark:border-neutral-800">
-              <Image src="/logo/10. Logo UIN.png" width={40} height={40} alt="UIN" className="object-contain" />
-              <Image src="/logo/12. HIMATIF.png" width={40} height={40} alt="HIMATIF" className="object-contain" />
-              <Image src="/logo/05. KASTRAD.png" width={40} height={40} alt="KASTRAD" className="object-contain" />
-              <Image src="/logo/LOGO KABINET PALANATA.png" width={50} height={50} alt="Palanata" className="object-contain" />
+              <Image src="/logo/uin.png" width={40} height={40} alt="UIN" className="object-contain" />
+              <Image src="/logo/himatif.png" width={40} height={40} alt="HIMATIF" className="object-contain" />
+              <Image src="/logo/palanata.png" width={50} height={50} alt="Palanata" className="object-contain" />
+              <Image src="/logo/kastrad.png" width={40} height={40} alt="KASTRAD" className="object-contain" />
             </div>
             <h3 className="text-lg font-bold text-neutral-900 dark:text-white mb-1">KASTRAD HIMATIF</h3>
             <p className="text-sm text-neutral-500 dark:text-neutral-500 text-center md:text-left leading-relaxed">
@@ -534,7 +534,7 @@ export default function Home() {
           <div className="bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-3xl w-full max-w-md overflow-hidden shadow-2xl" onClick={e => e.stopPropagation()}>
             <div className="p-8 text-center">
               <div className="relative w-20 h-20 mx-auto mb-5">
-                <Image src="/maskot/6.png" fill alt="Berhasil" className="object-contain drop-shadow-lg" />
+                <Image src="/maskot/6.webp" fill alt="Berhasil" className="object-contain drop-shadow-lg" />
               </div>
               <h3 className="text-xl font-bold text-neutral-900 dark:text-white mb-2">Aspirasi Berhasil Dikirim! 🎉</h3>
               <p className="text-sm text-neutral-500 dark:text-neutral-400 mb-6 leading-relaxed">

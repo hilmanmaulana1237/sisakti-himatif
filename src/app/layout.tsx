@@ -18,8 +18,8 @@ export const metadata: Metadata = {
   title: "SI SAKTI | Sarana Advokasi - KASTRAD HIMATIF UIN SGD Bandung",
   description: "SI SAKTI (Sarana Advokasi Kajian Strategis & Teknologi Informatika) — Platform advokasi digital mahasiswa Teknik Informatika UIN Sunan Gunung Djati Bandung oleh Bidang Kajian Strategis dan Advokasi (KASTRAD) HIMATIF.",
   icons: {
-    icon: "/logo/05. KASTRAD.png",
-    apple: "/logo/12. HIMATIF.png"
+    icon: "/logo/kastrad.png",
+    apple: "/logo/himatif.png"
   }
 };
 

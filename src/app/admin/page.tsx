@@ -14,7 +14,7 @@ interface Article { id: string; title: string; badge: string; description: strin
 interface ChatLog { id: string; messages: { role: string; content: string }[]; status: string; totalMessages: number; createdAt: string; resolvedAt: string | null; }
 interface Feedback { id: string; name: string; rating: number; message: string; createdAt: string; }
 
-const MASKOT_OPTIONS = ["/maskot/1.png", "/maskot/2.png", "/maskot/3.png", "/maskot/4.png", "/maskot/5.png", "/maskot/6.png"];
+const MASKOT_OPTIONS = ["/maskot/1.png", "/maskot/2.png", "/maskot/3.png", "/maskot/4.png", "/maskot/5.png", "/maskot/6.webp"];
 
 export default function AdminPage() {
   const [tab, setTab] = useState<"aspirasi" | "artikel" | "chatlog" | "feedback">("aspirasi");
