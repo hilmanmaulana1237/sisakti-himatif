@@ -105,7 +105,7 @@ export default function Home() {
   const navItems = [
     { name: "Beranda", link: "/", icon: <IconHome className="h-4 w-4" /> },
     { name: "Tentang", link: "#tentang", icon: <IconInfoCircle className="h-4 w-4" /> },
-    { name: "Panduan", link: "https://drive.google.com/drive/folders/1PWk0fGAAzyOjOzPwbSsVKN9AFR7bCce_", icon: <IconBook className="h-4 w-4" /> },
+    { name: "Panduan", link: "https://drive.google.com/file/d/1Vuz_nXFv9uaQkT0SFw6IgvfEnYmUYHiT/view?usp=sharing", icon: <IconBook className="h-4 w-4" /> },
     { name: "Kajian", link: "#ifyouknow", icon: <IconBooks className="h-4 w-4" /> },
     { name: "Riwayat", link: "#", icon: <IconHistory className="h-4 w-4" /> },
   ];
@@ -182,7 +182,7 @@ export default function Home() {
               <a href="#tentang" className="px-8 py-4 rounded-full border border-neutral-300 dark:border-neutral-700 text-neutral-700 dark:text-neutral-300 font-medium hover:border-brand-blue hover:text-brand-blue transition-all bg-white/50 dark:bg-neutral-900/50">
                 Pelajari Lebih Lanjut
               </a>
-              <a href="https://drive.google.com/drive/folders/1PWk0fGAAzyOjOzPwbSsVKN9AFR7bCce_" target="_blank" rel="noreferrer" className="px-8 py-4 rounded-full border border-brand-blue text-brand-blue font-medium hover:bg-brand-blue hover:text-white transition-all bg-transparent flex items-center gap-2">
+              <a href="https://drive.google.com/file/d/1Vuz_nXFv9uaQkT0SFw6IgvfEnYmUYHiT/view?usp=sharing" target="_blank" rel="noreferrer" className="px-8 py-4 rounded-full border border-brand-blue text-brand-blue font-medium hover:bg-brand-blue hover:text-white transition-all bg-transparent flex items-center gap-2">
                 <IconBook className="w-5 h-5" /> Buku Panduan
               </a>
             </div>
@@ -466,7 +466,7 @@ export default function Home() {
 
           <div className="flex flex-col text-center md:text-right gap-3 text-sm">
             <h4 className="font-bold text-neutral-900 dark:text-white mb-1">Tautan</h4>
-            <a href="https://drive.google.com/drive/folders/1PWk0fGAAzyOjOzPwbSsVKN9AFR7bCce_" target="_blank" rel="noreferrer" className="text-neutral-500 hover:text-brand-blue transition-colors">Buku Panduan</a>
+            <a href="https://drive.google.com/file/d/1Vuz_nXFv9uaQkT0SFw6IgvfEnYmUYHiT/view?usp=sharing" target="_blank" rel="noreferrer" className="text-neutral-500 hover:text-brand-blue transition-colors">Buku Panduan</a>
             <a href="https://www.instagram.com/himatifuinbandung" target="_blank" rel="noreferrer" className="text-neutral-500 hover:text-brand-blue transition-colors">Instagram HIMATIF</a>
             <a href="https://medium.com/@kastrad.himatifuinsgd" target="_blank" rel="noreferrer" className="text-neutral-500 hover:text-brand-blue transition-colors">Medium INFORMA</a>
             <a href="/admin" className="text-neutral-500 hover:text-brand-blue transition-colors">Admin Panel</a>
