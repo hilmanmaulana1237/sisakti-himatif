@@ -14,7 +14,7 @@ interface Message {
 const QUICK_REPLIES = [
   { label: "💬 Curhat", message: "Hai SI SAKTI, aku lagi butuh teman curhat nih..." },
   { label: "📚 Akademik", message: "Aku mau konsultasi masalah akademik" },
-  { label: "💰 Info UKT", message: "Aku mau tanya soal prosedur banding UKT" },
+  { label: "📜 Administrasi Kampus", message: "Aku mau tanya soal prosedur dan aturan administrasi kampus" },
   { label: "📋 Hak Mahasiswa", message: "Apa saja hak-hak mahasiswa IF yang perlu aku tahu?" },
 ];
 

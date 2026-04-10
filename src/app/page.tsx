@@ -273,7 +273,7 @@ export default function Home() {
             {[
               { icon: IconBooks, title: "Akademik", desc: "Kendala KRS, nilai, dospem, atau kebijakan akademik yang dirasa kurang adil.", color: "from-blue-500 to-blue-600" },
               { icon: IconHome, title: "Fasilitas Kampus", desc: "Lapor kerusakan fasilitas, kekurangan lab, WiFi, atau prasarana belajar.", color: "from-sky-500 to-cyan-600" },
-              { icon: IconGavel, title: "Advokasi UKT", desc: "Bantuan banding UKT, keringanan biaya, dan layanan administratif kampus.", color: "from-indigo-500 to-violet-600" },
+              { icon: IconGavel, title: "Layanan Administrasi", desc: "Bantuan birokrasi, regulasi kampus, beasiswa, dan kebebasan akademik.", color: "from-indigo-500 to-violet-600" },
               { icon: IconHeartHandshake, title: "Sosial & Keamanan", desc: "Pusat bantuan krisis: perundungan, pelecehan, atau konflik sosial kampus.", color: "from-purple-500 to-pink-600" },
             ].map((srv, i) => (
               <div key={i} className="group relative bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-2xl p-6 lg:p-8 hover:border-transparent transition-all duration-300 hover:-translate-y-1 hover:shadow-xl overflow-hidden">
@@ -423,7 +423,7 @@ export default function Home() {
                   <select value={formData.category} onChange={e => setFormData({ ...formData, category: e.target.value })} className="w-full bg-neutral-50 dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 rounded-xl px-4 py-3.5 text-neutral-900 dark:text-white focus:outline-none focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20 transition-all text-sm">
                     <option value="Konsultasi Akademik">Akademik (Nilai, KRS, Dosen)</option>
                     <option value="Fasilitas Kampus">Fasilitas & Layanan Kampus</option>
-                    <option value="Keuangan & UKT">Banding UKT & Keuangan</option>
+                    <option value="Administrasi Kampus">Birokrasi & Administrasi Kampus</option>
                     <option value="Keresahan Sosial">Keresahan Sosial / Kekerasan</option>
                     <option value="Lainnya">Lainnya</option>
                   </select>
