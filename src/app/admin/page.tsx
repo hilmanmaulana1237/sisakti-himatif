@@ -28,7 +28,7 @@ export default function AdminPage() {
   // Article Modal
   const [showModal, setShowModal] = useState(false);
   const [editingArticle, setEditingArticle] = useState<Article | null>(null);
-  const [articleForm, setArticleForm] = useState({ title: "", badge: "", description: "", link: "https://medium.com/@kastradhimatif", maskotImage: "" });
+  const [articleForm, setArticleForm] = useState({ title: "", badge: "", description: "", link: "https://medium.com/@kastrad.himatifuinsgd", maskotImage: "" });
   const [deleteConfirm, setDeleteConfirm] = useState<string | null>(null);
   const [saving, setSaving] = useState(false);
 
@@ -59,7 +59,7 @@ export default function AdminPage() {
     router.push('/admin/login');
   };
 
-  const openAddArticle = () => { setEditingArticle(null); setArticleForm({ title: "", badge: "", description: "", link: "https://medium.com/@kastradhimatif", maskotImage: "" }); setShowModal(true); };
+  const openAddArticle = () => { setEditingArticle(null); setArticleForm({ title: "", badge: "", description: "", link: "https://medium.com/@kastrad.himatifuinsgd", maskotImage: "" }); setShowModal(true); };
   const openEditArticle = (art: Article) => { setEditingArticle(art); setArticleForm({ title: art.title, badge: art.badge, description: art.description, link: art.link, maskotImage: art.maskotImage }); setShowModal(true); };
 
   const handleSaveArticle = async () => {
@@ -225,11 +225,10 @@ export default function AdminPage() {
                       </div>
                     </div>
                     <div className="flex items-center gap-2">
-                      <span className={`px-2 py-0.5 text-[10px] rounded-full font-bold border ${
-                        item.status === 'Selesai' ? 'bg-green-500/10 border-green-500/30 text-green-400' :
+                      <span className={`px-2 py-0.5 text-[10px] rounded-full font-bold border ${item.status === 'Selesai' ? 'bg-green-500/10 border-green-500/30 text-green-400' :
                         item.status === 'Diproses' ? 'bg-blue-500/10 border-blue-500/30 text-blue-400' :
-                        'bg-amber-500/10 border-amber-500/30 text-amber-400'
-                      }`}>{item.status || 'Menunggu'}</span>
+                          'bg-amber-500/10 border-amber-500/30 text-amber-400'
+                        }`}>{item.status || 'Menunggu'}</span>
                       <span className="px-2 py-0.5 bg-brand-blue/10 border border-brand-blue/20 text-brand-blue text-[10px] rounded-full font-mono font-semibold">{item.id}</span>
                     </div>
                   </div>
@@ -252,12 +251,12 @@ export default function AdminPage() {
                   )}
                   {editingAspirasi === item.id ? (
                     <div className="bg-neutral-800/80 border border-neutral-700 p-4 rounded-xl space-y-3">
-                      <select value={aspirasiEditForm.status} onChange={e => setAspirasiEditForm({...aspirasiEditForm, status: e.target.value})} className="w-full bg-neutral-900 border border-neutral-700 rounded-lg px-3 py-2 text-xs text-white">
+                      <select value={aspirasiEditForm.status} onChange={e => setAspirasiEditForm({ ...aspirasiEditForm, status: e.target.value })} className="w-full bg-neutral-900 border border-neutral-700 rounded-lg px-3 py-2 text-xs text-white">
                         <option value="Menunggu">⏳ Menunggu</option>
                         <option value="Diproses">🔄 Diproses</option>
                         <option value="Selesai">✅ Selesai</option>
                       </select>
-                      <textarea value={aspirasiEditForm.tindakLanjut} onChange={e => setAspirasiEditForm({...aspirasiEditForm, tindakLanjut: e.target.value})} placeholder="Tulis catatan tindak lanjut untuk mahasiswa..." className="w-full bg-neutral-900 border border-neutral-700 rounded-lg px-3 py-2 text-xs text-white resize-none" rows={3} />
+                      <textarea value={aspirasiEditForm.tindakLanjut} onChange={e => setAspirasiEditForm({ ...aspirasiEditForm, tindakLanjut: e.target.value })} placeholder="Tulis catatan tindak lanjut untuk mahasiswa..." className="w-full bg-neutral-900 border border-neutral-700 rounded-lg px-3 py-2 text-xs text-white resize-none" rows={3} />
                       <div className="flex gap-2">
                         <button onClick={() => handleUpdateAspirasi(item.id)} className="flex-1 py-2 bg-brand-blue text-white text-xs font-bold rounded-lg hover:bg-brand-darkBlue transition-all">Simpan</button>
                         <button onClick={() => setEditingAspirasi(null)} className="px-4 py-2 bg-neutral-700 text-neutral-300 text-xs font-bold rounded-lg hover:bg-neutral-600 transition-all">Batal</button>
@@ -341,9 +340,8 @@ export default function AdminPage() {
                     <div className="border-t border-neutral-800 px-4 py-4 bg-black/30 max-h-[400px] overflow-y-auto space-y-3">
                       {log.messages.map((msg, i) => (
                         <div key={i} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
-                          <div className={`max-w-[85%] px-3.5 py-2.5 rounded-2xl text-xs leading-relaxed whitespace-pre-wrap ${
-                            msg.role === 'user' ? 'bg-brand-blue/20 text-brand-lightBlue rounded-br-sm' : 'bg-neutral-800 text-neutral-300 rounded-bl-sm'
-                          }`}>
+                          <div className={`max-w-[85%] px-3.5 py-2.5 rounded-2xl text-xs leading-relaxed whitespace-pre-wrap ${msg.role === 'user' ? 'bg-brand-blue/20 text-brand-lightBlue rounded-br-sm' : 'bg-neutral-800 text-neutral-300 rounded-bl-sm'
+                            }`}>
                             <span className="text-[9px] font-semibold block mb-1 opacity-50">{msg.role === 'user' ? 'MAHASISWA' : 'SI SAKTI AI'}</span>
                             {msg.content}
                           </div>

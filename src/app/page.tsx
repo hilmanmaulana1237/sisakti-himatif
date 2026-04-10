@@ -468,7 +468,7 @@ export default function Home() {
             <h4 className="font-bold text-neutral-900 dark:text-white mb-1">Tautan</h4>
             <a href="https://drive.google.com/drive/folders/1PWk0fGAAzyOjOzPwbSsVKN9AFR7bCce_" target="_blank" rel="noreferrer" className="text-neutral-500 hover:text-brand-blue transition-colors">Buku Panduan</a>
             <a href="https://www.instagram.com/himatifuinbandung" target="_blank" rel="noreferrer" className="text-neutral-500 hover:text-brand-blue transition-colors">Instagram HIMATIF</a>
-            <a href="https://medium.com/@kastradhimatif" target="_blank" rel="noreferrer" className="text-neutral-500 hover:text-brand-blue transition-colors">Medium INFORMA</a>
+            <a href="https://medium.com/@kastrad.himatifuinsgd" target="_blank" rel="noreferrer" className="text-neutral-500 hover:text-brand-blue transition-colors">Medium INFORMA</a>
             <a href="/admin" className="text-neutral-500 hover:text-brand-blue transition-colors">Admin Panel</a>
           </div>
         </div>
