@@ -14,7 +14,6 @@ interface Article { id: string; title: string; badge: string; description: strin
 interface ChatLog { id: string; messages: { role: string; content: string }[]; status: string; totalMessages: number; createdAt: string; resolvedAt: string | null; }
 interface Feedback { id: string; name: string; rating: number; message: string; createdAt: string; }
 
-const MASKOT_OPTIONS = ["/maskot/1.png", "/maskot/2.png", "/maskot/3.png", "/maskot/4.png", "/maskot/5.png", "/maskot/6.webp"];
 
 export default function AdminPage() {
   const [tab, setTab] = useState<"aspirasi" | "artikel" | "chatlog" | "feedback">("aspirasi");
@@ -29,7 +28,7 @@ export default function AdminPage() {
   // Article Modal
   const [showModal, setShowModal] = useState(false);
   const [editingArticle, setEditingArticle] = useState<Article | null>(null);
-  const [articleForm, setArticleForm] = useState({ title: "", badge: "", description: "", link: "https://medium.com/@kastradhimatif", maskotImage: "/maskot/1.png" });
+  const [articleForm, setArticleForm] = useState({ title: "", badge: "", description: "", link: "https://medium.com/@kastradhimatif", maskotImage: "" });
   const [deleteConfirm, setDeleteConfirm] = useState<string | null>(null);
   const [saving, setSaving] = useState(false);
 
@@ -60,7 +59,7 @@ export default function AdminPage() {
     router.push('/admin/login');
   };
 
-  const openAddArticle = () => { setEditingArticle(null); setArticleForm({ title: "", badge: "", description: "", link: "https://medium.com/@kastradhimatif", maskotImage: "/maskot/1.png" }); setShowModal(true); };
+  const openAddArticle = () => { setEditingArticle(null); setArticleForm({ title: "", badge: "", description: "", link: "https://medium.com/@kastradhimatif", maskotImage: "" }); setShowModal(true); };
   const openEditArticle = (art: Article) => { setEditingArticle(art); setArticleForm({ title: art.title, badge: art.badge, description: art.description, link: art.link, maskotImage: art.maskotImage }); setShowModal(true); };
 
   const handleSaveArticle = async () => {
@@ -413,14 +412,13 @@ export default function AdminPage() {
                   <input type="url" value={articleForm.link} onChange={e => setArticleForm({ ...articleForm, link: e.target.value })} className="w-full bg-neutral-950 border border-neutral-800 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-brand-blue transition-all" />
                 </div>
                 <div>
-                  <label className="text-[11px] font-medium text-neutral-400 mb-1.5 block"><IconPhoto className="w-3 h-3 inline mr-1" />Pilih Maskot</label>
-                  <div className="grid grid-cols-6 gap-2">
-                    {MASKOT_OPTIONS.map((m, i) => (
-                      <button key={i} type="button" onClick={() => setArticleForm({ ...articleForm, maskotImage: m })} className={`aspect-square rounded-xl border-2 flex items-center justify-center p-1 transition-all ${articleForm.maskotImage === m ? "border-brand-blue bg-brand-blue/10" : "border-neutral-800 hover:border-neutral-600"}`}>
-                        <img src={m} alt="" className="w-full h-full object-contain" />
-                      </button>
-                    ))}
-                  </div>
+                  <label className="text-[11px] font-medium text-neutral-400 mb-1.5 block"><IconPhoto className="w-3 h-3 inline mr-1" />URL Foto / Gambar</label>
+                  <input type="url" value={articleForm.maskotImage} onChange={e => setArticleForm({ ...articleForm, maskotImage: e.target.value })} className="w-full bg-neutral-950 border border-neutral-800 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-brand-blue transition-all" placeholder="https://contoh.com/gambar.png" />
+                  {articleForm.maskotImage && (
+                    <div className="mt-2 bg-neutral-950 border border-neutral-800 rounded-xl p-3 flex items-center justify-center">
+                      <img src={articleForm.maskotImage} alt="Preview" className="max-h-[120px] object-contain rounded-lg" onError={e => { (e.target as HTMLImageElement).style.display = 'none'; }} onLoad={e => { (e.target as HTMLImageElement).style.display = 'block'; }} />
+                    </div>
+                  )}
                 </div>
                 <button onClick={handleSaveArticle} disabled={saving || !articleForm.title || !articleForm.badge} className="mt-1 w-full py-2.5 rounded-xl bg-brand-blue hover:bg-brand-darkBlue text-white font-semibold text-sm transition-all disabled:opacity-50 flex items-center justify-center gap-2">
                   {saving ? "Menyimpan..." : <><IconCheck className="w-4 h-4" /> {editingArticle ? "Simpan" : "Publikasikan"}</>}

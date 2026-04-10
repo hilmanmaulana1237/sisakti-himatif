@@ -9,7 +9,7 @@ import {
   IconSpeakerphone, IconGavel, IconBrandWhatsapp, IconBrandMedium,
   IconRobotFace, IconArrowRight, IconSchool, IconHeartHandshake,
   IconChevronLeft, IconChevronRight, IconExternalLink, IconHistory, IconX, IconInbox, IconUser,
-  IconCopy, IconTicket, IconCheck
+  IconCopy, IconTicket, IconCheck, IconBook
 } from "@tabler/icons-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -105,6 +105,7 @@ export default function Home() {
   const navItems = [
     { name: "Beranda", link: "/", icon: <IconHome className="h-4 w-4" /> },
     { name: "Tentang", link: "#tentang", icon: <IconInfoCircle className="h-4 w-4" /> },
+    { name: "Panduan", link: "https://drive.google.com/drive/folders/1PWk0fGAAzyOjOzPwbSsVKN9AFR7bCce_", icon: <IconBook className="h-4 w-4" /> },
     { name: "Kajian", link: "#ifyouknow", icon: <IconBooks className="h-4 w-4" /> },
     { name: "Riwayat", link: "#", icon: <IconHistory className="h-4 w-4" /> },
   ];
@@ -180,6 +181,9 @@ export default function Home() {
               </a>
               <a href="#tentang" className="px-8 py-4 rounded-full border border-neutral-300 dark:border-neutral-700 text-neutral-700 dark:text-neutral-300 font-medium hover:border-brand-blue hover:text-brand-blue transition-all bg-white/50 dark:bg-neutral-900/50">
                 Pelajari Lebih Lanjut
+              </a>
+              <a href="https://drive.google.com/drive/folders/1PWk0fGAAzyOjOzPwbSsVKN9AFR7bCce_" target="_blank" rel="noreferrer" className="px-8 py-4 rounded-full border border-brand-blue text-brand-blue font-medium hover:bg-brand-blue hover:text-white transition-all bg-transparent flex items-center gap-2">
+                <IconBook className="w-5 h-5" /> Buku Panduan
               </a>
             </div>
           </div>
@@ -323,7 +327,7 @@ export default function Home() {
               <h2 className="text-3xl md:text-5xl font-bold text-neutral-900 dark:text-white tracking-tight mb-4">INFORMA</h2>
               <p className="text-neutral-500 dark:text-neutral-400 max-w-2xl text-base md:text-lg">Program wadah penyampaian informasi mengenai isu-isu viral dan tema strategis terkini, dikaji dari kacamata Informatika.</p>
             </div>
-            <a href="https://medium.com/@kastradhimatif" target="_blank" rel="noreferrer" className="flex items-center gap-2 text-brand-blue font-semibold hover:underline shrink-0 text-sm">
+            <a href="https://medium.com/@kastrad.himatifuinsgd" target="_blank" rel="noreferrer" className="flex items-center gap-2 text-brand-blue font-semibold hover:underline shrink-0 text-sm">
               Lihat semua di Medium <IconBrandMedium className="w-5 h-5" />
             </a>
           </div>
@@ -360,7 +364,11 @@ export default function Home() {
                   <h3 className="text-lg font-bold text-neutral-900 dark:text-white mb-2 line-clamp-2 leading-tight">{art.title}</h3>
                   <p className="text-sm text-neutral-500 dark:text-neutral-400 mb-5 line-clamp-3 leading-relaxed flex-1">{art.description}</p>
                   <div className="relative h-[180px] rounded-xl overflow-hidden bg-gradient-to-br from-blue-50 to-slate-50 dark:from-neutral-800 dark:to-neutral-900 flex items-center justify-center mb-5 border border-neutral-100 dark:border-neutral-800">
-                    <Image src={art.maskotImage} width={140} height={180} alt={art.title} className="object-contain group-hover:scale-110 transition-transform duration-500 drop-shadow-md" />
+                    {art.maskotImage ? (
+                      <img src={art.maskotImage} alt={art.title} className="max-h-full max-w-full object-contain group-hover:scale-110 transition-transform duration-500 drop-shadow-md" />
+                    ) : (
+                      <span className="text-neutral-400 text-xs">Tidak ada gambar</span>
+                    )}
                   </div>
                   <a href={art.link} target="_blank" rel="noreferrer" className="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-brand-blue hover:text-white transition-all text-sm font-semibold">
                     Baca Selengkapnya <IconExternalLink className="w-4 h-4" />
@@ -458,6 +466,7 @@ export default function Home() {
 
           <div className="flex flex-col text-center md:text-right gap-3 text-sm">
             <h4 className="font-bold text-neutral-900 dark:text-white mb-1">Tautan</h4>
+            <a href="https://drive.google.com/drive/folders/1PWk0fGAAzyOjOzPwbSsVKN9AFR7bCce_" target="_blank" rel="noreferrer" className="text-neutral-500 hover:text-brand-blue transition-colors">Buku Panduan</a>
             <a href="https://www.instagram.com/himatifuinbandung" target="_blank" rel="noreferrer" className="text-neutral-500 hover:text-brand-blue transition-colors">Instagram HIMATIF</a>
             <a href="https://medium.com/@kastradhimatif" target="_blank" rel="noreferrer" className="text-neutral-500 hover:text-brand-blue transition-colors">Medium INFORMA</a>
             <a href="/admin" className="text-neutral-500 hover:text-brand-blue transition-colors">Admin Panel</a>
